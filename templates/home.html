@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}FitZone Gym | Home{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="container hero-content">
+        <h1>Transform Your Body, Build Your Confidence</h1>
+        <p>Join FitZone Gym today and start your fitness journey with expert trainers and modern equipment.</p>
+        <a href="{% url 'join_gym' %}" class="btn-primary">Join Now</a>
+    </div>
+</section>
+
+<section class="features container">
+    <div class="feature-card">
+        <h3>Expert Trainers</h3>
+        <p>Professional guidance to reach your goals safely and effectively.</p>
+    </div>
+    <div class="feature-card">
+        <h3>Flexible Plans</h3>
+        <p>Choose a plan that fits your budget and lifestyle.</p>
+    </div>
+    <div class="feature-card">
+        <h3>Modern Facilities</h3>
+        <p>State-of-the-art equipment and a motivating environment.</p>
+    </div>
+</section>
+{% endblock %}

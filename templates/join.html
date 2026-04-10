@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}FitZone Gym | Join{% endblock %}
+
+{% block content %}
+<section class="container form-section">
+    <h2>Join the Gym</h2>
+    <p>Fill in your details to become a member.</p>
+
+    <form method="post" class="join-form" novalidate>
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.errors %}
+                    <small class="error-text">{{ field.errors|striptags }}</small>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn-primary">Submit Registration</button>
+    </form>
+</section>
+{% endblock %}
