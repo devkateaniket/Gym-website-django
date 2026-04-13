@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}FitZone Gym | Login{% endblock %}
+
+{% block content %}
+<section class="container auth-section">
+    <div class="auth-card">
+        <h2>Login</h2>
+        <p>Enter your credentials to access the gym portal.</p>
+
+        <form method="post" class="auth-form" novalidate>
+            {% csrf_token %}
+            {% if form.non_field_errors %}
+                <small class="error-text">{{ form.non_field_errors|striptags }}</small>
+            {% endif %}
+            {% for field in form %}
+                <div class="form-group">
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                        <small class="error-text">{{ field.errors|striptags }}</small>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn-primary">Login</button>
+        </form>
+
+        <p class="auth-switch">New customer? <a href="{% url 'signup' %}">Create an account</a></p>
+    </div>
+</section>
+{% endblock %}

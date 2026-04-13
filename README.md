@@ -3,8 +3,9 @@
 A Django-based gym website where customers can join through a web form, and their details are stored in the database.
 
 ## Features
-- Home page with call-to-action
-- Customer join form
+- Customer signup and login flow
+- Protected home page after login
+- Customer join form (available after login)
 - Data saved to SQLite database
 - Admin panel to view and manage customer records
 - Responsive frontend using HTML, CSS, and JavaScript
@@ -49,6 +50,9 @@ A Django-based gym website where customers can join through a web form, and thei
    - http://127.0.0.1:8000/admin/
 
 ## App Routes
-- `/` Home page
+- `/signup/` Create customer login account
+- `/login/` Login page
+- `/logout/` Logout route
+- `/` Home page (requires login)
 - `/join/` Customer registration page
 - `/admin/` Django admin panel
